@@ -1,22 +1,29 @@
 // Desc: Main App component
 import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import {Container} from 'react-bootstrap'; 
 import Header from './component/Header';
 import Footer from './component/Footer';
+import HomeScreen from './screens/HomeScreen';
+import ProductScreen from './screens/ProductScreen';
+
 
 function App() {
   return (
-    < >
+    <Router >
       <Header />
-      <main>
+      <main className='py-3'>
         <Container>
-          <h1>Welcome to sandeep</h1>
+         <Routes>
+            <Route path='/' element={<HomeScreen />} exact />
+            <Route path='/product/:id' element={<ProductScreen />}  />
+          </Routes>
+
+
         </Container>
-          
-        <h1>App</h1>
       </main>
       <Footer />
-    </>
+    </Router>
   );
 }
 
