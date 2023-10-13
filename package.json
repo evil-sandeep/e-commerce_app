@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "mern stack shopping app",
   "main": "server.js",
+  "type": "module", 
   "scripts": {
     "test": "mern stack shopping app",
     "start": "node server/server",
@@ -35,4 +36,5 @@
     "concurrently": "^8.2.1",
     "nodemon": "^3.0.1"
   }
+ 
 }
