@@ -3,7 +3,7 @@ const products=require('./data/products');
 const app=express();
 
 app.get('/',(req,res)=>{
-    res.send('hello world');
+    res.send('Api in Runnnnnning ');
 })
 
 app.get('/api/products',(req,res)=>{

@@ -1,9 +1,7 @@
 import React, {useState,useEffect} from 'react'
 import { Link,useParams } from 'react-router-dom'
-// import { useParams } from 'react-router-dom'
 import { Row, Col, Image, ListGroup, Card, Button } from 'react-bootstrap'
 import Rating from '../component/Rating'
-// import products from '../products'
 import axios from 'axios' 
 
 
@@ -12,7 +10,7 @@ import axios from 'axios'
 const ProductScreen = () => {
   const {id}=useParams();
 
-  const[product, setProduct]=useState({ })
+  const[product, setProduct]=useState({})
 
   useEffect(() => {
     const fetchProducts = async () => {
