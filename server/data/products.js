@@ -24,6 +24,7 @@ const products = [
     countInStock: 7,
     rating: 4.0,
     numReviews: 8,
+    
   },
   {
     _id: '3',
@@ -79,4 +80,4 @@ const products = [
   },
 ]
 
-export default products
+module.exports=products
