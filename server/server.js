@@ -1,9 +1,12 @@
 const express=require('express');
+const dotenv=require('dotenv');
 const products=require('./data/products');
 const app=express();
 
+dotenv.config(); //dotnet config
+
 app.get('/',(req,res)=>{
-    res.send('Api in Runnnnnning ');
+    res.send('Api in Runnnnnning.......');
 })
 
 app.get('/api/products',(req,res)=>{
@@ -15,5 +18,7 @@ app.get('/api/products/:id',(req,res)=>{
     res.json(product )
 })
 
+const PORT=process.env.PORT || 5000
 
-app.listen(5000, console.log('server run in 5000 prot'));
+
+app.listen(PORT, console.log(`server running in ${process.env.NODE_ENV} in ${PORT} prot`));
