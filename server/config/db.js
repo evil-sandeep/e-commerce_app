@@ -8,7 +8,7 @@ const connectDB = async () => {
             useNewUrlParser: true,
             // useCreateIndex:true  duèto unsuported
         })
-        console.log(`MongoDB Connected Successfully ✅ : ${conn.connection.host}`.cyan.underline  )
+        console.log(`MongoDB Connected Successfully ✅ : ${conn.connection.host}`.green.underline  )
 
     }
     catch (error) {
