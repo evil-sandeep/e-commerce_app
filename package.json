@@ -2,14 +2,16 @@
   "name": "server",
   "version": "1.0.0",
   "description": "mern stack shopping app",
-  "main": "server.js",
+  "main": "server.js", 
   "type": "module",
   "scripts": {
     "test": "mern stack shopping app",
     "start": "node server/server",
     "server": "nodemon server/server",
     "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "data:import": "node server/seeder",
+    "data:destroy": "node server/seeder -d"
   },
   "repository": {
     "type": "git",
