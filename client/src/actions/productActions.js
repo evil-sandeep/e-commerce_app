@@ -7,7 +7,7 @@ import {
 
 // Path: client/src/reducers/productReducer.js
 
-export const productListReducer = () => async (dispatch) => {
+export const listProducts = () => async (dispatch) => {
     try {
         dispatch({ type: PRODUCT_LIST_REQUEST })
         const { data } = await axios.get('/api/products')

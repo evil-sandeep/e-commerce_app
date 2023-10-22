@@ -1,0 +1,113 @@
+[33mcommit a89014442def99cec89a843c939f55428b16f588[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: sandeep kumar sahoo <chandansandeep2000@gmail.com>
+Date:   Sun Oct 22 16:08:59 2023 +0530
+
+    product list reducer and action
+
+[33mcommit a08a8e93de1b6694261655999639cb9512449aaf[m
+Author: sandeep kumar sahoo <chandansandeep2000@gmail.com>
+Date:   Sun Oct 22 15:04:13 2023 +0530
+
+    Create and Install Redux Store
+
+[33mcommit d8a93414e5cb9da455085d9ad032159e1e43b1bd[m
+Author: sandeep kumar sahoo <chandansandeep2000@gmail.com>
+Date:   Sat Oct 21 17:39:43 2023 +0530
+
+    Custom error handling  for api
+
+[33mcommit e6de5852b7a66192253b8df381d79597f1a6a2e9[m
+Author: sandeep kumar sahoo <chandansandeep2000@gmail.com>
+Date:   Sat Oct 21 09:20:10 2023 +0530
+
+    Fetching Products From Database.
+
+[33mcommit 5f7413c077d5c7053d3785aa967d97d60d25461a[m
+Author: sandeep kumar sahoo <chandansandeep2000@gmail.com>
+Date:   Fri Oct 20 14:02:40 2023 +0530
+
+    data insert in mongo compas or delete
+
+[33mcommit a6bc87622b0e3749880c23d6d32727cacb5718f8[m
+Author: sandeep kumar sahoo <chandansandeep2000@gmail.com>
+Date:   Fri Oct 20 12:39:51 2023 +0530
+
+    sample data for admin and user for login and authentication
+
+[33mcommit 2a2988d7941686841b097d97180cedc1e61fe745[m
+Author: sandeep kumar sahoo <chandansandeep2000@gmail.com>
+Date:   Fri Oct 20 12:04:23 2023 +0530
+
+     modeling our data using mongoose  to define schemaa
+
+[33mcommit 4d8f0af29a0ba23628962f07f04d5d52684e0000[m
+Author: sandeep kumar sahoo <chandansandeep2000@gmail.com>
+Date:   Fri Oct 20 10:38:41 2023 +0530
+
+    Adding colors in colnsole
+
+[33mcommit 4fa083edb533e7ba167f15efaec4f922c2eb6bb9[m
+Author: sandeep kumar sahoo <chandansandeep2000@gmail.com>
+Date:   Fri Oct 20 10:35:14 2023 +0530
+
+    Adding colors in colnsole
+
+[33mcommit 2ee7f7fb42ad3917e0552983e5a8f02ea73b8eef[m
+Author: sandeep kumar sahoo <chandansandeep2000@gmail.com>
+Date:   Fri Oct 20 09:54:48 2023 +0530
+
+     Connected to the Database
+
+[33mcommit ff992b612ac58b3abceac5ee191422a1df4a4776[m
+Author: sandeep kumar sahoo <chandansandeep2000@gmail.com>
+Date:   Fri Oct 13 11:22:47 2023 +0530
+
+    Add type:module, whic is help import our file instead of using require keyword
+
+[33mcommit d6a4d27fde0fdebfbc60c59a7f781f61c69a57db[m
+Author: sandeep kumar sahoo <chandansandeep2000@gmail.com>
+Date:   Fri Oct 13 11:08:32 2023 +0530
+
+    Setup Environment variable for projects
+
+[33mcommit a5fa7a7d723263b769e4999ad8bd53715274eb4e[m
+Author: sandeep kumar sahoo <chandansandeep2000@gmail.com>
+Date:   Fri Oct 13 10:53:14 2023 +0530
+
+    Nodemon and concurrently setup , which run client and server is run only one command
+
+[33mcommit 0854c41082ad52a2e11ccd8ffe8692ae516e1c6e[m
+Author: sandeep kumar sahoo <chandansandeep2000@gmail.com>
+Date:   Fri Oct 13 10:26:43 2023 +0530
+
+    Fetching Products from react through backend
+
+[33mcommit c0ec8f86456d35cdc69c45067fad446ef0e02705[m
+Author: sandeep kumar sahoo <chandansandeep2000@gmail.com>
+Date:   Tue Oct 10 17:46:59 2023 +0530
+
+    Add some packages, comple header and home screen file  add router
+
+[33mcommit 606ff3b5517f670ac09e397e5cce6dfe17955d7d[m
+Author: sandeep kumar sahoo <chandansandeep2000@gmail.com>
+Date:   Tue Oct 10 17:45:52 2023 +0530
+
+    Addddd some dummy data to check data is fetch proper or not
+
+[33mcommit df9ab9b291ac70a1aefe835ee5cabcb1240cf681[m
+Author: sandeep kumar sahoo <chandansandeep2000@gmail.com>
+Date:   Tue Oct 10 17:44:14 2023 +0530
+
+     Adding demo image of product to check div  and responsiveness
+
+[33mcommit e496b26bedd717c2c53277baeae082c27d0c339a[m
+Author: sandeep kumar sahoo <chandansandeep2000@gmail.com>
+Date:   Mon Oct 9 16:32:18 2023 +0530
+
+    Adding header and Footer section
+
+[33mcommit 2da1f15caff2cda684841928740c0d09acfecf88[m
+Author: sandeep kumar sahoo <chandansandeep2000@gmail.com>
+Date:   Mon Oct 9 15:27:53 2023 +0530
+
+    React setup for client server
