@@ -11,7 +11,7 @@ const router = express.Router();//used to define and organize routes.
 
 router.get('/', asyncHandler(async (req, res) => {
     const products = await Product.find({})           //This route is typically used when you want to retrieve  
-                                                      //a list of all available products.
+    //a list of all available products.
     res.json(products)
 }))
 
@@ -21,12 +21,16 @@ router.get('/', asyncHandler(async (req, res) => {
 
 router.get('/:id', asyncHandler(async (req, res) => {
     const product = await Product.findById(req.params.id)
+    console.log(`Received a request to fetch product with ID: ${product}`);
     if (product) {
+
+        console.log(`Product found: ${product.name}`);
         res.json(product)
     } else {
+        console.log(`Product with ID ${product} not found`);
         res.status(404)
         throw new Error("Product not found")
-        
+
     }
 
 }))
