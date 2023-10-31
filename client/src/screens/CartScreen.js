@@ -2,30 +2,39 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
 import Message from '../component/Message';
-import { addToCart } from '../actions/cartAction';
+import { addToCart,removeFromCart } from '../actions/cartAction';
 import { Row, Col, ListGroup, Image, Form, Button, Card } from 'react-bootstrap';
 
 const CartScreen = () => {
-  const { id } = useParams(); // Get product ID from URL
+  // Get product ID from URL
+  const { id } = useParams(); 
   const dispatch = useDispatch();
-  const cart = useSelector((state) => state.cart); // Access cart state
+
+  // Access cart state
+  const cart = useSelector((state) => state.cart); 
   const { cartItems } = cart;
+
   const qty = new URLSearchParams(window.location.search).get('qty') || 1; // Get quantity from URL
 
   useEffect(() => {
     if (id) {
+      
+        // Add the selected product to the cart
       dispatch(addToCart(id, qty));
     }
   }, [dispatch, id, qty]);
 
+  // Function to remove an item from the cart
   const removeFromCartHandler = (id) => {
     // Implement the functionality to remove an item from the cart
     console.log(`Remove product with ID ${id}`);
+    dispatch(removeFromCart(id))
   };
 
+  // Function to proceed to checkout
   const checkOutHandler= ()=>{
     window.location.href='/login?redirect=shipping'
-    
+
   }
 
   return (
@@ -33,6 +42,8 @@ const CartScreen = () => {
       <Col md={8}>
         <h1>Shopping Cart</h1>
         {cartItems.length === 0 ? (
+
+            // Display a message when the cart is empty
           <Message>
             Your cart is empty <Link to='/'>Go Back</Link>
           </Message>
