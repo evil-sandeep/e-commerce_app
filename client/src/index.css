@@ -11,6 +11,15 @@ h3{
   padding: 1rem 0;
 }
 
+h1{
+  font-size: 1.8rem;
+  padding: 1rem;
+}
+h2{
+  font-size: 1.4rem;
+  padding: 0.5rem;
+}
+
 /* Path: client/src/components/Post.js */
 /* .post{
   margin: 1rem 0;
