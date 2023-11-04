@@ -2,24 +2,25 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
 import Message from '../component/Message';
-import { addToCart,removeFromCart } from '../actions/cartAction';
+import { addToCart, removeFromCart } from '../actions/cartAction';
 import { Row, Col, ListGroup, Image, Form, Button, Card } from 'react-bootstrap';
 
 const CartScreen = () => {
   // Get product ID from URL
-  const { id } = useParams(); 
+  const { id } = useParams();
   const dispatch = useDispatch();
 
   // Access cart state
-  const cart = useSelector((state) => state.cart); 
+  const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
+
 
   const qty = new URLSearchParams(window.location.search).get('qty') || 1; // Get quantity from URL
 
   useEffect(() => {
     if (id) {
-      
-        // Add the selected product to the cart
+
+      // Add the selected product to the cart
       dispatch(addToCart(id, qty));
     }
   }, [dispatch, id, qty]);
@@ -32,8 +33,8 @@ const CartScreen = () => {
   };
 
   // Function to proceed to checkout
-  const checkOutHandler= ()=>{
-    window.location.href='/login?redirect=shipping'
+  const checkOutHandler = () => {
+    window.location.href = '/login?redirect=shipping'
 
   }
 
@@ -43,7 +44,7 @@ const CartScreen = () => {
         <h1>Shopping Cart</h1>
         {cartItems.length === 0 ? (
 
-            // Display a message when the cart is empty
+          // Display a message when the cart is empty
           <Message>
             Your cart is empty <Link to='/'>Go Back</Link>
           </Message>
@@ -101,17 +102,13 @@ const CartScreen = () => {
                 .toFixed(2)}
             </ListGroup.Item>
             <ListGroup.Item >
-            <Button type='button' className='btn-block' diasabled={cartItems.length===0} onClick={checkOutHandler}>
-              Proceed To Checkout
-            </Button>
+              <Button type='button' className='btn-block' diasabled={cartItems.length === 0} onClick={checkOutHandler}>
+                Proceed To Checkout
+              </Button>
             </ListGroup.Item>
           </ListGroup>
         </Card>
       </Col>
-
-
-
-
     </Row>
   );
 };
