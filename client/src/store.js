@@ -4,22 +4,29 @@ import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { productListReducer, productDetailsReducer } from './reducers/productReducer';
 import { cartReducer } from './reducers/cartReducer';
-
-// import {productListReducer,productDetailsReducer} from './reducers/productReducers';
+import { userLoginReducer } from './reducers/userReducers';
 
 
 const reducer = combineReducers({
     productList: productListReducer,
     productDetails: productDetailsReducer,
-    cart: cartReducer
+    cart: cartReducer,
+    userLogin: userLoginReducer
 })
 
 
 const cartItemsFromStorage = localStorage.getItem('cartItems') ?
     JSON.parse(localStorage.getItem('cartItems')) : []
+
+const userInfoFromStorage = localStorage.getItem('userInfo') ?
+    JSON.parse(localStorage.getItem('userInfo')) : null
+
+
 const initialState = {
     cart: { cartItems: cartItemsFromStorage }
-};// provide default values for  application's initial state if needed.
+    , userLogin: { userInfo: userInfoFromStorage }
+};
+ // provide default values for  application's initial state if needed.
 const middleware = [thunk];//allows  to write asynchronous actions in Redux.
 
 const store = createStore(
