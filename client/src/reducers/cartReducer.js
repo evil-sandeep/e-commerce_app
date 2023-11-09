@@ -1,25 +1,22 @@
 
-import { CART_ADD_ITEM, CART_REMOVE_ITEM, CART_SAVE_SHIPPING_ADDRESS } from "../constants/cartConstants";
+import {
+    CART_ADD_ITEM, CART_REMOVE_ITEM,
+    CART_SAVE_SHIPPING_ADDRESS, CART_SAVE_PAYMENT_METHOD
+} from "../constants/cartConstants";
 
 // The cartReducer function takes in two parameters: state and action.
 // The state parameter is set to an empty object.
 // The action parameter is set to the action object.
-// The state parameter is set to an empty object.
-// The action parameter is set to the action object.
 // The switch statement checks the action.type property.
-// If the action.type property is set to CART_ADD_ITEM, then the state is returned as an object.
-// The object contains the state and the payload.
-// The payload is the data that is returned from the action object.
+// If the action.type property is set to CART_ADD_ITEM, then the state is returned as an object
 // The payload contains the product, the quantity, and the size.
 // The payload is added to the state.cartItems array.
 // If the action.type property is set to CART_REMOVE_ITEM, then the state is returned as an object.
 // The object contains the state and the payload.
-// The payload is the data that is returned from the action object.
 // The payload contains the product ID.
 // The payload is removed from the state.cartItems array.
 // If the action.type property is set to CART_SAVE_SHIPPING_ADDRESS, then the state is returned as an object.
-// The object contains the state and the payload.
-// The payload is the data that is returned from the action object.
+
 // The payload contains the shipping address.
 // The shipping address is added to the state.shippingAddress object.
 // If the action.type property is set to CART_SAVE_PAYMENT_METHOD, then the state is returned as an object.
@@ -32,7 +29,7 @@ import { CART_ADD_ITEM, CART_REMOVE_ITEM, CART_SAVE_SHIPPING_ADDRESS } from "../
 
 
 
-export const cartReducer = (state = { cartItems: [] ,shippingAddress:{} }, action) => {
+export const cartReducer = (state = { cartItems: [], shippingAddress: {} }, action) => {
     switch (action.type) {
         case CART_ADD_ITEM:
             const item = action.payload
@@ -54,7 +51,7 @@ export const cartReducer = (state = { cartItems: [] ,shippingAddress:{} }, actio
                     ...state,
                     cartItems: [...state.cartItems, item]
                 }
-             }
+            }
 
 
         case CART_REMOVE_ITEM:
@@ -63,7 +60,13 @@ export const cartReducer = (state = { cartItems: [] ,shippingAddress:{} }, actio
                 cartItems: state.cartItems.filter(x => x.product !== action.payload),
             }
 
-            case CART_SAVE_SHIPPING_ADDRESS:
+        case CART_SAVE_SHIPPING_ADDRESS:
+            return {
+                ...state,
+                shippingAddress: action.payload,
+            }
+
+        case CART_SAVE_PAYMENT_METHOD:
             return {
                 ...state,
                 shippingAddress: action.payload,
