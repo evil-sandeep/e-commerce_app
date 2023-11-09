@@ -1,5 +1,5 @@
 
-import { CART_ADD_ITEM, CART_REMOVE_ITEM } from "../constants/cartConstants";
+import { CART_ADD_ITEM, CART_REMOVE_ITEM, CART_SAVE_SHIPPING_ADDRESS } from "../constants/cartConstants";
 
 // The cartReducer function takes in two parameters: state and action.
 // The state parameter is set to an empty object.
@@ -32,16 +32,13 @@ import { CART_ADD_ITEM, CART_REMOVE_ITEM } from "../constants/cartConstants";
 
 
 
-export const cartReducer = (state = { cartItems: [] }, action) => {
+export const cartReducer = (state = { cartItems: [] ,shippingAddress:{} }, action) => {
     switch (action.type) {
         case CART_ADD_ITEM:
             const item = action.payload
-
             // The product property is set to the item property.
             const existsItem = state.cartItems.find(x => x.product === item.product)
-
             if (existsItem) {
-
                 // The state.cartItems array is mapped.
                 // The item.product property is compared to the x.product property.
                 // If the item.product property is equal to the x.product property, then the item is returned.
@@ -57,7 +54,8 @@ export const cartReducer = (state = { cartItems: [] }, action) => {
                     ...state,
                     cartItems: [...state.cartItems, item]
                 }
-            }
+             }
+
 
         case CART_REMOVE_ITEM:
             return {
@@ -65,9 +63,18 @@ export const cartReducer = (state = { cartItems: [] }, action) => {
                 cartItems: state.cartItems.filter(x => x.product !== action.payload),
             }
 
+            case CART_SAVE_SHIPPING_ADDRESS:
+            return {
+                ...state,
+                shippingAddress: action.payload,
+            }
+
+
         default:
             return state
     }
 }
+
+
 
 

@@ -1,17 +1,22 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, useNavigate } from 'react-router-dom';
 import Message from '../component/Message';
 import { addToCart, removeFromCart } from '../actions/cartAction';
 import { Row, Col, ListGroup, Image, Form, Button, Card } from 'react-bootstrap';
+
+
 
 const CartScreen = () => {
   // Get product ID from URL
   const { id } = useParams();
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
 
   // Access cart state
   const cart = useSelector((state) => state.cart);
+  const user = useSelector((state) => state.userLogin);
   const { cartItems } = cart;
 
 
@@ -27,16 +32,21 @@ const CartScreen = () => {
 
   // Function to remove an item from the cart
   const removeFromCartHandler = (id) => {
-    // Implement the functionality to remove an item from the cart
+    // Implement the functionality to remove an item from the cart  ?redirect=shipping
     console.log(`Remove product with ID ${id}`);
     dispatch(removeFromCart(id))
   };
 
-  // Function to proceed to checkout
-  const checkOutHandler = () => {
-    window.location.href = '/login?redirect=shipping'
 
-  }
+  const checkOutHandler = () => {
+
+    if (!user.userInfo) {
+      navigate('/login');
+    } else {
+      navigate('/shipping')
+    }
+
+  };
 
   return (
     <Row>
@@ -102,9 +112,10 @@ const CartScreen = () => {
                 .toFixed(2)}
             </ListGroup.Item>
             <ListGroup.Item >
-              <Button type='button' className='btn-block' diasabled={cartItems.length === 0} onClick={checkOutHandler}>
+              <Button type='button' className='btn-block' disabled={cartItems.length === 0} onClick={checkOutHandler}>
                 Proceed To Checkout
               </Button>
+
             </ListGroup.Item>
           </ListGroup>
         </Card>
