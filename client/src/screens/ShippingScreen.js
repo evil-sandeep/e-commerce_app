@@ -4,6 +4,7 @@ import { Form, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import FormContainer from '../component/FormContainer';
 import { saveShippingAddress  } from '../actions/cartAction';
+import CheckoutSteps from '../component/CheckoutSteps';
 
 const ShippingScreen = () => {
 
@@ -29,7 +30,9 @@ const ShippingScreen = () => {
   }
 
   return (
+
     <FormContainer>
+      <CheckoutSteps step1 step2 />
       <h1>Shipping</h1>
       <form onSubmit={submitHandler}>
 
