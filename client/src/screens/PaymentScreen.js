@@ -15,10 +15,7 @@ const PaymentScreen = () => {
         navigate('/shipping')
     }
 
-
-
-    const [paymentMethod, setPaymentMethod] = useState('PayPal')
-
+    const [paymentMethod, setPaymentMethod] = useState('PayPal ')
 
     const dispatch = useDispatch();
 
@@ -34,41 +31,43 @@ const PaymentScreen = () => {
 
         <FormContainer>
             <CheckoutSteps step1 step2 step3 />
-     <h1>Payment Method💰</h1>
+            <h1>Payment Method💰</h1>
             <form onSubmit={submitHandler}>
                 <Form.Group>
                     <Form.Label as='legend'> Select Method</Form.Label>
                     <Col>
+                        
                         <Form.Check
                             type='radio'
-                            label='Paypal Or Credit Card'
+                            label='PayPal Or Credit Card'
                             id='PayPal'
                             name='paymentMethod'
                             value='PayPal'
                             checked
-                            onChange={(e) => setPaymentMethod(e.target.value)}>
-                        </Form.Check>
+                            onChange={(e) => setPaymentMethod(e.target.value)}
+                        />
 
-                        {/* <Form.Check
+
+                        <Form.Check
                             type='radio'
                             label='Stripe'
                             id='Stripe'
                             name='paymentMethod'
                             value='Stripe'
-                            checked
+                          
                             onChange={(e) => setPaymentMethod(e.target.value)}>
-                        </Form.Check> */}
+                        </Form.Check>
 
                         <Form.Check
                             type='radio'
                             label='Cash On Delivery'
                             id='cashyOnDelivery'
                             name='paymentMethod'
-                            value='cashOnDelivery'
-                            checked
+                            value='Cash On Delivery'
+                            
                             onChange={(e) => setPaymentMethod(e.target.value)}>
                         </Form.Check>
-                         
+
                     </Col>
                 </Form.Group>
 
