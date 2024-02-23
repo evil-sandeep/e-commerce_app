@@ -35,4 +35,4 @@ app.use(errorHandler)
 const PORT = process.env.PORT || 5000
 
 
-app.listen(PORT, console.log(`server running in ${process.env.NODE_ENV} in ${PORT} prot`));
+app.listen(PORT, console.log(`server running in ${process.env.NODE_ENV} in ${PORT} prot`));  

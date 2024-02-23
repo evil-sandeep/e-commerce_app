@@ -1,32 +1,47 @@
-import asyncHandler from 'express-async-handler';//middleware for handling asynchronous functions with Express
-import Order from '../models/orderModel.js';//Mongoose model representing order.
+import asyncHandler from 'express-async-handler'
+import Order from '../models/orderModel.js'
 
-
-//desc  Create New Order
-//route POST/api/order
-//access Private
+// @desc    Create new order
+// @route   POST /api/orders
+// @access  Private
 const addOrderItems = asyncHandler(async (req, res) => {
-    const { orderItems, shippingAddress, paymentMethod, itemsPrice, taxPrice, shippingPrice, totalPrice } = req.body //Come From Body
+  const {
+    orderItems,
+    shippingAddress,
+    paymentMethod,
+    itemsPrice,
+    taxPrice,
+    shippingPrice,
+    totalPrice,
+  } = req.body
 
-    if (orderItems && orderItems.length === 0) {
-        res.status(400)
-        throw new Error('No Order items');
-        return
-    } else {
-        const order = new Order({
-            orderItems,
-            user: req.user._id, //Come From Token
-            shippingAddress,
-            paymentMethod,
-            itemsPrice,
-            taxPrice,
-            shippingPrice,
-            totalPrice
-        })
+  if (orderItems && orderItems.length === 0) {
+    res.status(400)
+    throw new Error('No order items')
+    return
+  } else {
+    const order = new Order({
+      orderItems,
+      user: req.user._id,
+      shippingAddress,
+      paymentMethod,
+      itemsPrice,
+      taxPrice,
+      shippingPrice,
+      totalPrice,
+    })
 
-        const createdOrder = await order.save()
-        res.status(201).json(createdOrder)
-    }
+    const createdOrder = await order.save()
+
+    res.status(201).json(createdOrder)
+  }
 })
 
-export { addOrderItems };
+// // @desc    Get Order By id
+// // @route   Get /api/order/:id
+// // @access  Private
+// const getOrderById = asyncHandler(async (req, res) => {
+//   const order =await Order
+// })
+
+export { addOrderItems }
