@@ -35,17 +35,18 @@ const PlaceOrderScreen = () => {
     const orderCreate = useSelector((state) => state.orderCreate);
     const { order, success, error } = orderCreate;
 
+
     useEffect(() => {
-        if (success) {
+        console.log("Success:", success);
+        console.log("Order:", order);
+        if (success && order) {
             navigate(`/order/${order._id}`);
         }
-    }, [navigate, success,order]);
+    }, [navigate, success, order]);
 
     const [loading, setLoading] = useState(false);
 
     const placeOrderHandler = () => {
-        setLoading(true);
-        console.log(order)
         dispatch(
             createOrder({
                 orderItems: cart.cartItems,
@@ -57,7 +58,6 @@ const PlaceOrderScreen = () => {
                 totalPrice: cart.totalPrice,
             })
         );
-        setLoading(false);
     };
 
     return (
@@ -152,7 +152,7 @@ const PlaceOrderScreen = () => {
                                     disabled={loading || cart.cartItems.length === 0}
                                     onClick={placeOrderHandler}
                                 >
-                                    {loading ? 'Placing Order...' : 'Place Order'}
+                                    Place Order
                                 </Button>
                             </ListGroup.Item>
                         </ListGroup>

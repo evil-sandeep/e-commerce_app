@@ -59,14 +59,14 @@ export const getOrderDetails = (id) => async (dispatch, getState) => {
       },
     }
 
-    const { data } = await axios.get(`/api/orders${id}`, config)
+    const { data } = await axios.get(`/api/orders/${id}`, config)
 
     dispatch({
       type: ORDER_DETAILS_SUCCESS,
       payload: data,
     })
   } catch (error) {
-    console.log('order req fail' + error)
+    console.log('order req fail', error)
     dispatch({
       type: ORDER_DETAILS_FAIL,
       payload:
